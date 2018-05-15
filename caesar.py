@@ -14,7 +14,8 @@ def decrypt(text, key):
         # or strip spaces altogether, which is what traditionally was done.
         returnval= ''.join([chr(ord(char) - key) for char in text])
     except ValueError:
-        pass
+        from string import ascii
+        returnval = ''.join(choice(ascii) for i in range(len(text))))
     return returnval
 
 
