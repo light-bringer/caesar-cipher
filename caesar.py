@@ -14,8 +14,7 @@ def decrypt(text, key):
         # or strip spaces altogether, which is what traditionally was done.
         returnval= ''.join([chr(ord(char) - key) for char in text])
     except ValueError:
-        returnval = "code break"
-        print("Code broke for SPACES")
+        pass
     return returnval
 
 
