@@ -1,4 +1,4 @@
-import itertools
+import string
 
 def decrypt(text, key):
     '''
@@ -14,8 +14,9 @@ def decrypt(text, key):
         # or strip spaces altogether, which is what traditionally was done.
         returnval= ''.join([chr(ord(char) - key) for char in text])
     except ValueError:
-        from string import ascii
-        returnval = ''.join(choice(ascii) for i in range(len(text)))
+        s1=set(x for x in string.printable)
+        s2=set(chr(x) for x in range(32,127))
+        returnval = ''.join(choice(s2) for i in range(len(text)))
     return returnval
 
 
