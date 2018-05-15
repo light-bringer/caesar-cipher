@@ -15,7 +15,7 @@ def decrypt(text, key):
         returnval= ''.join([chr(ord(char) - key) for char in text])
     except ValueError:
         from string import ascii
-        returnval = ''.join(choice(ascii) for i in range(len(text))))
+        returnval = ''.join(choice(ascii) for i in range(len(text)))
     return returnval
 
 
