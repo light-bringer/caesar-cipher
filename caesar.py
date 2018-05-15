@@ -1,3 +1,5 @@
+import itertools
+
 def decrypt(text, key):
     '''
     :param text: Text to decrypt
@@ -32,9 +34,7 @@ def encrypt(text, key):
 
         returnval = ''.join([chr(ord(char) + key) for char in text])
     except ValueError:
-        returnval = "code break"
-        print("Code Broke for spaces")
-
+        pass
     return returnval
 
 
