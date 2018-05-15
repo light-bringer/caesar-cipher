@@ -17,6 +17,7 @@ def decrypt(text, key):
     except ValueError:
         s1=set(x for x in string.printable)
         s2=set(chr(x) for x in range(32,127))
+        s2 = list(s2)
         returnval = ''.join(random.choice(s2) for i in range(len(text)))
     return returnval
 
